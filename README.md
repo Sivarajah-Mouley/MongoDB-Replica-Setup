@@ -142,6 +142,18 @@ Now that your replica set is set up, here's how to access secondary nodes for re
 5. **Restart MongoDB:**
    Restart the MongoDB service for changes to take effect.
 
+#### Adjusting File Permissions (Optional)
+
+If encountering permission issues when editing the MongoDB configuration file (`mongod.cfg`), you can adjust file permissions using the `icacls` command in Command Prompt:
+
+1. **Grant User Full Control:**
+   Replace `"C:\path\to\mongod.cfg"` with the actual path to your `mongod.cfg` file and `"username"` with the appropriate user or group name:
+   ```bash
+   icacls "C:\path\to\mongod.cfg" /grant "username":F
+   ```
+
+This command grants explicit permissions to the specified user (`username`) to modify the configuration file. Adjust the command's path and username accordingly based on your system configuration and needs.
+
 #### Step 5: Set Up Access Control
 
 1. **Create Users for Databases:**
